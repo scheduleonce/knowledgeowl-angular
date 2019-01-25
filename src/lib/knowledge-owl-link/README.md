@@ -7,8 +7,6 @@ A `<button>` element should be used whenever some action is performed. An `<a>` 
 
 There are several `<button>` variants, each applied as an attribute:
 
-| **Name**               | **Description**                              |
-| ---------------------- | -------------------------------------------- |
-| `knowledge-owl-link`   | Link of help article of knowledgeOwl         |
-
-
+| **Name**             | **Description**                      |
+| -------------------- | ------------------------------------ |
+| `knowledge-owl-link` | Link of help article of knowledgeOwl |
