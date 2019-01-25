@@ -1,7 +1,7 @@
 {
-  "name": "knowledge-owl",
+  "name": "knowledge-owl-angular",
   "version": "0.0.1",
-  "description": "Angular Material",
+  "description": "Knowledge Owl Angular",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
