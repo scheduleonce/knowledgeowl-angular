@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
-  Component, OnInit,
+  Component,
+  OnInit,
   ViewEncapsulation
 } from '@angular/core';
 
@@ -33,8 +34,8 @@ export class KnowledgeOwlWidget implements OnInit {
     this.ko.type = 'text/javascript';
     this.ko.async = true;
     this.ko.src =
-      '//oncehub.knowledgeowl.com/javascript/ko-index?__pc=5bf3cb528e121cef79ec4329-5bf3cb6e8e121c7577ec4310';// FIXME: Should be dynamic
+      '//oncehub.knowledgeowl.com/javascript/ko-index?__pc=5bf3cb528e121cef79ec4329-5bf3cb6e8e121c7577ec4310'; // FIXME: Should be dynamic
     document.head.appendChild(this.ko);
-    this.ko.addEventListener('load', function () {});
+    this.ko.addEventListener('load', function() {});
   }
 }

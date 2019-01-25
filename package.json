@@ -15,7 +15,7 @@
     "e2e": "ng e2e",
     "prettier": "prettier --list-different \"**/*.{ts,js,css,scss,md,html}\"",
     "fix:prettier": "prettier --write \"**/*.{ts,js,css,scss,md,html}\"",
-    "npm-pack": "cd dist/ui && npm pack",
+    "npm-pack": "cd dist/knowledgeowl-angular && npm pack",
     "package": "npm run build && npm run npm-pack"
   },
   "private": true,
@@ -31,6 +31,7 @@
     "@angular/router": "^6.1.0",
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
+    "prettier": "^1.16.1",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },

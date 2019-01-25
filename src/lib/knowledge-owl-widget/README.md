@@ -2,13 +2,11 @@
 
 Angular project that enables angular application to add KnowledgeOwl widget and to link HTML elements to Knowledgeowl help article.
 
-
 #### Available features
 
-| Feature          | Notes                                                  | Docs         |
-|------------------|--------------------------------------------------------|--------------|
-| Article link     |                                                        |   [Docs][0]  |
-
+| Feature      | Notes | Docs      |
+| ------------ | ----- | --------- |
+| Article link |       | [Docs][0] |
 
 ## How to use?
 
@@ -23,7 +21,6 @@ npm install --save @knowledge-angular
 ##### Step 2:
 
 Import the Module:
-
 
 ```sh
 import {KnowledgeOwlWidgetModule} from '@angular/material';
@@ -42,5 +39,4 @@ Add widget in app.component.html
 <knowledge-owl-widget></knowledge-owl-widget>
 ```
 
-
- [0]: https://github.com/scheduleonce/knowledgeowl-angular
+[0]: https://github.com/scheduleonce/knowledgeowl-angular

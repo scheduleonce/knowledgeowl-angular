@@ -2,7 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  ViewEncapsulation,
+  ViewEncapsulation
 } from '@angular/core';
 
 /**
@@ -23,7 +23,5 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class KnowledgeOwlLink {
-  constructor(elementRef: ElementRef) {
-
-  }
+  constructor(elementRef: ElementRef) {}
 }
