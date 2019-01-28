@@ -1,9 +1,15 @@
 import {
+  AfterContentInit,
   ChangeDetectionStrategy,
   Component,
+  Input,
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
+import {
+  getKnowledgeWidgetPoductKeyMissingError,
+  getKnowledgeWidgetPoductURLMissingError
+} from './knowledge-owl-widget-errors';
 
 @Component({
   selector: 'knowledge-owl-widget',
@@ -13,29 +19,66 @@ import {
   exportAs: 'knowledgeOwlWidget',
   providers: []
 })
-export class KnowledgeOwlWidget implements OnInit {
+export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
   ko;
   _ko16_p;
+
+  /** Product URL to access KnowledgeOwl widget. */
+  @Input()
+  projectURL: string;
+
+  /** Product key to access KnowledgeOwl widget. */
+  @Input()
+  projectKey: string;
 
   constructor() {}
 
   ngOnInit() {
-    this.loadKnowledgeOwlScript();
+    this.initWidget();
+    this.loadScript();
   }
 
-  private loadKnowledgeOwlScript() {
+  ngAfterContentInit() {
+    this._validateWidgetInputs();
+  }
+
+  /** Validates the widget's inputs. */
+  protected _validateWidgetInputs() {
+    this._validateProductURL();
+    this._validateProductKey();
+  }
+
+  /**
+   * Private methods
+   */
+
+  /** Throws an error if the productKey input is missing. */
+  private _validateProductKey() {
+    if (!this.projectKey) {
+      throw getKnowledgeWidgetPoductKeyMissingError();
+    }
+  }
+
+  /** Throws an error if the productURL input is missing. */
+  private _validateProductURL() {
+    if (!this.projectURL) {
+      throw getKnowledgeWidgetPoductURLMissingError();
+    }
+  }
+
+  /** Initializes the widget. */
+  private initWidget() {
     this._ko16_p = this._ko16_p || [];
-    this._ko16_p.push([
-      '_setProject',
-      '5bf3cb528e121cef79ec4329-5bf3cb6e8e121c7577ec4310' // FIXME: Should be dynamic based on consumer
-    ]);
+    this._ko16_p.push(['_setProject', this.projectKey]);
     window['_ko16_p'] = this._ko16_p; // TODO: Find proper solution for this
+  }
+
+  /** Loads script into page */
+  private loadScript() {
     this.ko = document.createElement('script');
     this.ko.type = 'text/javascript';
     this.ko.async = true;
-    this.ko.src =
-      '//oncehub.knowledgeowl.com/javascript/ko-index?__pc=5bf3cb528e121cef79ec4329-5bf3cb6e8e121c7577ec4310'; // FIXME: Should be dynamic
+    this.ko.src = `${this.projectURL}?__pc=${this.projectKey}`;
     document.head.appendChild(this.ko);
-    this.ko.addEventListener('load', function() {});
   }
 }
