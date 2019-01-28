@@ -42,7 +42,10 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
     this._validateWidgetInputs();
   }
 
-  /** Validates the widget's inputs. */
+  /**
+   * Validates the widget's inputs.
+   * @private
+   */
   protected _validateWidgetInputs() {
     this._validateProductURL();
     this._validateProductKey();
@@ -52,28 +55,40 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
    * Private methods
    */
 
-  /** Throws an error if the productKey input is missing. */
+  /**
+   * Throws an error if the productKey input is missing.
+   * @private
+   */
   private _validateProductKey() {
     if (!this.projectKey) {
       throw getKnowledgeWidgetPoductKeyMissingError();
     }
   }
 
-  /** Throws an error if the productURL input is missing. */
+  /**
+   * Throws an error if the productURL input is missing.
+   * @private
+   */
   private _validateProductURL() {
     if (!this.projectURL) {
       throw getKnowledgeWidgetPoductURLMissingError();
     }
   }
 
-  /** Initializes the widget. */
+  /**
+   * Initializes the widget.
+   * @private
+   */
   private initWidget() {
     this._ko16_p = this._ko16_p || [];
     this._ko16_p.push(['_setProject', this.projectKey]);
     window['_ko16_p'] = this._ko16_p; // TODO: Find proper solution for this
   }
 
-  /** Loads script into page */
+  /**
+   * Loads script into page
+   * @private
+   */
   private loadScript() {
     this.ko = document.createElement('script');
     this.ko.type = 'text/javascript';

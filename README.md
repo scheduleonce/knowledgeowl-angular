@@ -62,6 +62,6 @@ Exported as: `knowledgeOwlLink`
 
 ## Properties
 
-| Name | Description |
-| ---- | ----------- |
-|      |             |
+| Name                            | Required | Description               |
+| ------------------------------- | -------- | ------------------------- |
+| @Input() <br/>`article: string` | true     | KnowledgeOwl Article name |
