@@ -10,12 +10,58 @@ You can use npm command line tool to install package.
 npm install --save @knowledge-angular
 ```
 
-#### Available features
+## How to use?
 
-| Feature             | Notes | Docs      |
-| ------------------- | ----- | --------- |
-| KnowledgeOwl Widget |       | [Docs][0] |
-| KnowledgeOwl Link   |       | [Docs][0] |
+Import the Module:
 
-[0]: https://github.com/scheduleonce/knowledgeowl-angular/tree/master/src/lib/knowledge-owl-widget
-[2]: https://github.com/scheduleonce/knowledgeowl-angular/tree/master/src/lib/knowledge-owl-link
+```sh
+import {KnowledgeOwlWidgetModule} from '@knowledgeOwl-angular';
+
+@NgModule({
+  ...
+  imports: [KnowledgeOwlWidgetModule],
+  ...
+})
+export class AppModule { }
+```
+
+Add widget in app.component.html
+
+```sh
+<knowledge-owl-widget></knowledge-owl-widget>
+```
+
+## How to link article to `<a>` or `button`?
+
+```sh
+<a knowledge-owl-link="article title"></a>
+```
+
+## Directives
+
+### `KnowledgeOwlWidget`
+
+Selector: `knowledge-owl-widget`
+
+Exported as: `knowledgeOwlWidget`
+
+## Properties
+
+| Name                               | Required | Description                               |
+| ---------------------------------- | -------- | ----------------------------------------- |
+| @Input() <br/>`projectURL: string` | true     | Product URL to access KnowledgeOwl widget |
+| @Input() <br/>`projectKey: string` | true     | Product key to access KnowledgeOwl widget |
+
+## Directives
+
+### `KnowledgeOwlLink`
+
+Selector: `knowledge-owl-link`
+
+Exported as: `knowledgeOwlLink`
+
+## Properties
+
+| Name                            | Required | Description               |
+| ------------------------------- | -------- | ------------------------- |
+| @Input() <br/>`article: string` | true     | KnowledgeOwl Article name |
