@@ -10,17 +10,17 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint knowledge-owl --format stylish",
+    "test": "ng test --source-map=false",
+    "lint": "ng lint --format stylish",
     "e2e": "ng e2e",
     "prettier": "prettier --list-different \"**/*.{ts,js,css,scss,md,html}\"",
     "fix:prettier": "prettier --write \"**/*.{ts,js,css,scss,md,html}\"",
     "npm-pack": "cd dist/knowledgeowl-angular && npm pack",
     "package": "npm run build && npm run npm-pack"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
+    "@angular/cdk": "^7.3.0",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
     "@angular/core": "^6.1.0",
@@ -31,9 +31,10 @@
     "@angular/router": "^6.1.0",
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
+    "karma-junit-reporter": "^1.2.0",
     "prettier": "^1.16.1",
     "rxjs": "~6.2.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "^0.8.29"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",

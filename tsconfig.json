@@ -10,20 +10,23 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
       "es2017",
       "dom"
-    ],
-    "paths": {
-      "knowledgeOwl": [
-        "dist/knowledge-owl"
-      ],
-      "knowledgeOwl/*": [
-        "dist/knowledge-owl/*"
-      ]
-    }
-  }
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    // IDEs should not type-check the different node_modules directories of the different packages.
+    // This would cause the IDEs to be slower and also linters would check the node_modules.
+    "node_modules/"
+  ]
 }
