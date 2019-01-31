@@ -12,11 +12,13 @@ import {
   getKnowledgeLinkInvalidArticleError
 } from './knowledge-owl-widget-errors';
 
+const urlValidatorRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+
 /**
  * Knowledge Owl Link
  */
 @Component({
-  selector: `a[knowledge-owl-link]`,
+  selector: `a[knowledgeOwlLink]`,
   exportAs: 'knowledgeOwlLink',
   templateUrl: 'knowledge-owl-link.html',
   encapsulation: ViewEncapsulation.None,
@@ -24,7 +26,7 @@ import {
 })
 export class KnowledgeOwlLink implements AfterContentInit {
   @Input()
-  articleURL: string;
+  knowledgeOwlLink: string;
 
   constructor(protected elementRef: ElementRef) {}
 
@@ -42,7 +44,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
     event.preventDefault();
     // Convert the KO link into the widget link
     const widgetHref =
-      this.articleURL.replace('/help/', '/help/fetch-article/hash/') +
+      this.knowledgeOwlLink.replace('/help/', '/help/fetch-article/hash/') +
       '?widget=true';
     if (window['__ko16']) {
       // Wait until widget loads completely
@@ -62,7 +64,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
     const nativeElement = this.getHostElement();
     if (nativeElement.tagName === 'A') {
       // Updating link for <a>
-      nativeElement.setAttribute('href', this.articleURL);
+      nativeElement.setAttribute('href', this.knowledgeOwlLink);
     }
   }
 
@@ -80,7 +82,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
    * @private
    */
   private _validateArticlePresence() {
-    if (!this.articleURL) {
+    if (!this.knowledgeOwlLink) {
       throw getKnowledgeLinkArticleMissingError();
     }
   }
@@ -90,7 +92,10 @@ export class KnowledgeOwlLink implements AfterContentInit {
    * @private
    */
   private _validateArticleURLFormat() {
-    if (!this.articleURL.trim()) {
+    if (
+      !this.knowledgeOwlLink.trim() ||
+      !urlValidatorRegex.test(this.knowledgeOwlLink)
+    ) {
       throw getKnowledgeLinkInvalidArticleError();
     }
   }

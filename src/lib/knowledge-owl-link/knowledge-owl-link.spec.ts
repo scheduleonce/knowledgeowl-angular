@@ -8,23 +8,21 @@ import {
 
 @Component({
   template: `
-    <a knowledge-owl-link>Test link</a>
+    <a knowledgeOwlLink>Test link</a>
   `
 })
 class KnowledgeOwlLinkWithoutArticle {}
 
 @Component({
   template: `
-    <a knowledge-owl-link articleURL="  ">Test link</a>
+    <a knowledgeOwlLink="invalidURL">Test link</a>
   `
 })
 class KnowledgeOwlLinkWithInvalidArticle {}
 
 @Component({
   template: `
-    <a
-      knowledge-owl-link
-      articleURL="https://help.onceplatform.com/help/test-article"
+    <a knowledgeOwlLink="https://knowledgeowl.article.com/help/test-article"
       >Test link</a
     >
   `
@@ -32,14 +30,14 @@ class KnowledgeOwlLinkWithInvalidArticle {}
 class KnowledgeOwlLinkWithValidInputs {}
 
 describe('KnowledgeOwl link with missing credentials', () => {
-  it('should throw error without articleURL', async(() => {
+  it('should throw error without knowledgeOwlLink', async(() => {
     const fixture = createComponent(KnowledgeOwlLinkWithoutArticle);
     expect(() => fixture.detectChanges()).toThrowError(
       getKnowledgeLinkArticleMissingError().message
     );
   }));
 
-  it('should throw error with invalid articleURL', async(() => {
+  it('should throw error with invalid knowledgeOwlLink', async(() => {
     const fixture = createComponent(KnowledgeOwlLinkWithInvalidArticle);
     expect(() => fixture.detectChanges()).toThrowError(
       getKnowledgeLinkInvalidArticleError().message

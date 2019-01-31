@@ -1,6 +1,9 @@
 # knowledgeowl-angular
 
-Angular project that enables angular application to add KnowledgeOwl widget and to link HTML elements to Knowledgeowl help article.
+Project that enables angular application to integrate KnowledgeOwl widget. This gives following features:
+
+1. Integrate KnowledgeOwl angular widget into application.
+2. Link HTML element to KnowledgeOwl article.
 
 ## How to install?
 
@@ -34,7 +37,7 @@ Add widget in app.component.html
 ## How to link article to `<a>` or `button`?
 
 ```sh
-<a knowledge-owl-link="article title"></a>
+<a knowledgeOwlLink="article URL"></a>
 ```
 
 ## Directives
@@ -56,12 +59,12 @@ Exported as: `knowledgeOwlWidget`
 
 ### `KnowledgeOwlLink`
 
-Selector: `knowledge-owl-link`
+Selector: `knowledgeOwlLink`
 
 Exported as: `knowledgeOwlLink`
 
 ## Properties
 
-| Name                               | Required | Description              |
-| ---------------------------------- | -------- | ------------------------ |
-| @Input() <br/>`articleURL: string` | true     | KnowledgeOwl Article URL |
+| Name                                     | Required | Description              |
+| ---------------------------------------- | -------- | ------------------------ |
+| @Input() <br/>`knowledgeOwlLink: string` | true     | KnowledgeOwl Article URL |
