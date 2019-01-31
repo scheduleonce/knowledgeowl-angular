@@ -2,12 +2,13 @@
   "name": "knowledgeowl-angular",
   "description": "KnlwledgeOwl widget integration for Angular",
   "author": "https://github.com/scheduleonce/knowledgeowl-angular/graphs/contributors",
+  "main": "./bundles/knowledge-owl-angular.umd.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/scheduleonce/knowledgeowl-angular"
   },
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
