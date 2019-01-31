@@ -13,12 +13,9 @@
   },
   "ngPackage": {
     "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+    "dest": "../dist/knowledgeowl-angular",
     "lib": {
-      "entryFile": "./lib/index.ts",
-      "cssUrl": "inline"
-    },
-    "whitelistedNonPeerDependencies": [
-      "."
-    ]
+      "entryFile": "public_api.ts"
+    }
   }
 }
