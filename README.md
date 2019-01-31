@@ -37,7 +37,7 @@ Add widget in app.component.html
 ## How to link article to `<a>` or `button`?
 
 ```sh
-<a knowledgeOwlLink="article URL"></a>
+<a knowledgeOwlLink="https://knowledgeowl.article.com/help/test-article"></a>
 ```
 
 ## Directives
@@ -50,10 +50,11 @@ Exported as: `knowledgeOwlWidget`
 
 ## Properties
 
-| Name                               | Required | Description                               |
-| ---------------------------------- | -------- | ----------------------------------------- |
-| @Input() <br/>`projectURL: string` | true     | Product URL to access KnowledgeOwl widget |
-| @Input() <br/>`projectKey: string` | true     | Product key to access KnowledgeOwl widget |
+| Name                                 | Required | Description                                    |
+| ------------------------------------ | -------- | ---------------------------------------------- |
+| @Input() <br/>`projectURL: string`   | true     | Product URL to access KnowledgeOwl widget      |
+| @Input() <br/>`projectKey: string`   | true     | Product key to access KnowledgeOwl widget      |
+| @Input() <br/>`pageLocation: string` | false    | Page location of application. Example "\start" |
 
 ## Directives
 

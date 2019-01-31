@@ -2,7 +2,12 @@
   "name": "knowledge-owl-angular",
   "version": "0.0.1",
   "description": "Knowledge Owl Angular",
+  "main": "./bundles/knowledge-owl-angular.umd.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scheduleonce/knowledgeowl-angular"
+  }
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"

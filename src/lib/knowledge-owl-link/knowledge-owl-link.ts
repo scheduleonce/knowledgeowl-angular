@@ -12,6 +12,7 @@ import {
   getKnowledgeLinkInvalidArticleError
 } from './knowledge-owl-widget-errors';
 
+/** Regex to validate article URL is valid or not */
 const urlValidatorRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
 /**
