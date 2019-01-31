@@ -20,8 +20,8 @@ import {
   providers: []
 })
 export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
-  ko;
-  _ko16_p;
+  /** Flag to check initial page location updated */
+  isPageLocationUpdated = false;
 
   /** Product URL to access KnowledgeOwl widget. */
   @Input()
@@ -31,15 +31,27 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
   @Input()
   projectKey: string;
 
+  /** Current page location for widget context. */
+  private _pageLocation: string;
+  @Input() set pageLocation(value: string) {
+    this._pageLocation = value.trim();
+    this._updatePageLocation();
+  }
+
+  get pageLocation() {
+    return this._pageLocation;
+  }
+
   constructor() {}
 
   ngOnInit() {
-    this.initWidget();
-    this.loadScript();
+    this._initWidget();
+    this._loadScript();
   }
 
   ngAfterContentInit() {
     this._validateWidgetInputs();
+    this._initPageLocation();
   }
 
   /**
@@ -79,21 +91,52 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
    * Initializes the widget.
    * @private
    */
-  private initWidget() {
-    this._ko16_p = this._ko16_p || [];
-    this._ko16_p.push(['_setProject', this.projectKey]);
-    window['_ko16_p'] = this._ko16_p;
+  private _initWidget() {
+    const _ko16_p = [];
+    _ko16_p.push(['_setProject', this.projectKey]);
+    window['_ko16_p'] = _ko16_p;
   }
 
   /**
    * Loads script into page
    * @private
    */
-  private loadScript() {
-    this.ko = document.createElement('script');
-    this.ko.type = 'text/javascript';
-    this.ko.async = true;
-    this.ko.src = `${this.projectURL}?__pc=${this.projectKey}`;
-    document.head.appendChild(this.ko);
+  private _loadScript() {
+    const ko = document.createElement('script');
+    ko.type = 'text/javascript';
+    ko.async = true;
+    ko.src = `${this.projectURL}?__pc=${this.projectKey}`;
+    document.head.appendChild(ko);
+  }
+
+  /**
+   * Init page location first time
+   */
+  private _initPageLocation() {
+    const updatePageLocationInterval = setInterval(() => {
+      if (!this.pageLocation || this.isPageLocationUpdated) {
+        clearInterval(updatePageLocationInterval);
+      }
+      if (
+        !this.isPageLocationUpdated &&
+        window['__ko16'] &&
+        this.pageLocation
+      ) {
+        // Updating page location once
+        window['__ko16'].updatePageLoc(this.pageLocation);
+        this.isPageLocationUpdated = true;
+      }
+    });
+  }
+
+  /**
+   * Update page location on change
+   * @private
+   */
+  private _updatePageLocation() {
+    if (!window['__ko16'] || !this.pageLocation) {
+      return;
+    }
+    window['__ko16'].updatePageLoc(this.pageLocation);
   }
 }
