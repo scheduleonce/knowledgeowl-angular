@@ -82,7 +82,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
   private initWidget() {
     this._ko16_p = this._ko16_p || [];
     this._ko16_p.push(['_setProject', this.projectKey]);
-    window['_ko16_p'] = this._ko16_p; // TODO: Find proper solution for this
+    window['_ko16_p'] = this._ko16_p;
   }
 
   /**

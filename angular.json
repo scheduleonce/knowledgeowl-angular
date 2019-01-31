@@ -20,7 +20,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "test/test.ts",
-            "tsConfig": "test/tsconfig.spec.json",
+            "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "test/karma.conf.js"
           }
         },
@@ -28,8 +28,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ui/tsconfig.lib.json",
-              "projects/ui/tsconfig.spec.json"
+              "src/tsconfig.lib.json",
+              "src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

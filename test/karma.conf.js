@@ -13,12 +13,19 @@ module.exports = function(config) {
       require('@angular-devkit/build-angular/plugins/karma'),
       require('karma-junit-reporter')
     ],
+    files: [
+      {
+        pattern: '../node_modules/zone.js/dist/zone.min.js',
+        included: true,
+        watched: false
+      }
+    ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     junitReporter: {
       outputDir: require('path').join(__dirname, '../../reports'),
-      outputFile: 'ui-test-results.xml'
+      outputFile: 'knowledge-owl-angular-test-results.xml'
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../../coverage'),
