@@ -10,7 +10,7 @@ Project that enables angular application to integrate KnowledgeOwl widget. This 
 You can use npm command line tool to install package.
 
 ```sh
-npm install --save @knowledge-angular
+npm install knowledgeowl-angular
 ```
 
 ## How to use?
