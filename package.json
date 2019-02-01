@@ -11,7 +11,7 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
-    "test": "ng test --source-map=false",
+    "test": "ng test",
     "lint": "ng lint --format stylish",
     "e2e": "ng e2e",
     "prettier": "prettier --list-different \"**/*.{ts,js,css,scss,md,html}\"",
