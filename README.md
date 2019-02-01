@@ -1,5 +1,8 @@
 # knowledgeowl-angular
 
+[![Build Status](https://travis-ci.org/scheduleonce/knowledgeowl-angular.svg?branch=master)](https://travis-ci.org/scheduleonce/knowledgeowl-angular)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
 Project that enables angular application to integrate KnowledgeOwl widget. This gives following features:
 
 1. Integrate KnowledgeOwl angular widget into application.
