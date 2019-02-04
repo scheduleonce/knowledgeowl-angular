@@ -1,10 +1,7 @@
 import { Component, Provider, Type } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { KnowledgeOwlLinkModule } from './index';
-import {
-  getKnowledgeLinkArticleMissingError,
-  getKnowledgeLinkInvalidArticleError
-} from './knowledge-owl-widget-errors';
+import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-errors';
 
 @Component({
   template: `
@@ -12,13 +9,6 @@ import {
   `
 })
 class KnowledgeOwlLinkWithoutArticle {}
-
-@Component({
-  template: `
-    <a knowledgeOwlLink="invalidURL">Test link</a>
-  `
-})
-class KnowledgeOwlLinkWithInvalidArticle {}
 
 @Component({
   template: `
@@ -31,23 +21,20 @@ class KnowledgeOwlLinkWithValidInputs {}
 
 describe('KnowledgeOwl link with missing credentials', () => {
   it('should throw error without knowledgeOwlLink', async(() => {
-    const fixture = createComponent(KnowledgeOwlLinkWithoutArticle);
+    const fixture = createComponent(KnowledgeOwlLinkWithoutArticle, [
+      { provide: 'KOProjectURL', useValue: 'https://knowledgeowl.com' }
+    ]);
     expect(() => fixture.detectChanges()).toThrowError(
       getKnowledgeLinkArticleMissingError().message
-    );
-  }));
-
-  it('should throw error with invalid knowledgeOwlLink', async(() => {
-    const fixture = createComponent(KnowledgeOwlLinkWithInvalidArticle);
-    expect(() => fixture.detectChanges()).toThrowError(
-      getKnowledgeLinkInvalidArticleError().message
     );
   }));
 });
 
 describe('KnowledgeOwl link', () => {
   it('should not throw error when given correct inputs', async(() => {
-    const fixture = createComponent(KnowledgeOwlLinkWithValidInputs);
+    const fixture = createComponent(KnowledgeOwlLinkWithValidInputs, [
+      { provide: 'KOProjectURL', useValue: 'https://knowledgeowl.com' }
+    ]);
     expect(() => fixture.detectChanges()).not.toThrowError();
   }));
 });

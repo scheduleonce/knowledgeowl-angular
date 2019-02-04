@@ -21,11 +21,12 @@ npm install knowledgeowl-angular
 Import the Module:
 
 ```sh
-import {KnowledgeOwlWidgetModule} from '@knowledgeOwl-angular';
+import {KnowledgeOwlWidgetModule, KnowledgeOwlLinkModule} from 'knowledgeowl-angular';
 
 @NgModule({
   ...
-  imports: [KnowledgeOwlWidgetModule],
+  imports: [KnowledgeOwlWidgetModule, KnowledgeOwlLinkModule],
+  providers: [{provide: 'KOProjectURL', useValue: 'https://knowledgeowlurl.com'}]
   ...
 })
 export class AppModule { }
@@ -34,13 +35,15 @@ export class AppModule { }
 Add widget in app.component.html
 
 ```sh
-<knowledge-owl-widget></knowledge-owl-widget>
+<knowledge-owl-widget
+    [projectKey]="'projectKeyProvidedByKnowledgeOwl'"
+></knowledge-owl-widget>
 ```
 
 ## How to link article to `<a>` or `button`?
 
 ```sh
-<a knowledgeOwlLink="https://knowledgeowl.article.com/help/test-article"></a>
+<a knowledgeOwlLink="test-article"></a>
 ```
 
 ## Directives
@@ -55,9 +58,22 @@ Exported as: `knowledgeOwlWidget`
 
 | Name                                 | Required | Description                                    |
 | ------------------------------------ | -------- | ---------------------------------------------- |
-| @Input() <br/>`projectURL: string`   | true     | Product URL to access KnowledgeOwl widget      |
 | @Input() <br/>`projectKey: string`   | true     | Product key to access KnowledgeOwl widget      |
 | @Input() <br/>`pageLocation: string` | false    | Page location of application. Example "\start" |
+
+### Open the widget programmatically
+
+The widget exposes an API to open/close programmatically.
+
+```sh
+class MyComponent {
+  @ViewChild(KnowledgeOwlWidget) widget: KnowledgeOwlWidget;
+
+  someMethod() {
+    this.widget.open();
+  }
+}
+```
 
 ## Directives
 
@@ -69,6 +85,6 @@ Exported as: `knowledgeOwlLink`
 
 ## Properties
 
-| Name                                     | Required | Description              |
-| ---------------------------------------- | -------- | ------------------------ |
-| @Input() <br/>`knowledgeOwlLink: string` | true     | KnowledgeOwl Article URL |
+| Name                                     | Required | Description               |
+| ---------------------------------------- | -------- | ------------------------- |
+| @Input() <br/>`knowledgeOwlLink: string` | true     | KnowledgeOwl Article Name |

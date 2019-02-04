@@ -2,14 +2,18 @@ import {
   AfterContentInit,
   ChangeDetectionStrategy,
   Component,
+  Inject,
   Input,
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
 import {
   getKnowledgeWidgetPoductKeyMissingError,
-  getKnowledgeWidgetPoductURLMissingError
+  getKnowledgeWidgetInvalidProductURLError
 } from './knowledge-owl-widget-errors';
+
+/** Regex to validate article URL is valid or not */
+const urlValidatorRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
 @Component({
   selector: 'knowledge-owl-widget',
@@ -22,10 +26,6 @@ import {
 export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
   /** Flag to check initial page location updated */
   isPageLocationUpdated = false;
-
-  /** Product URL to access KnowledgeOwl widget. */
-  @Input()
-  projectURL: string;
 
   /** Product key to access KnowledgeOwl widget. */
   @Input()
@@ -42,7 +42,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
     return this._pageLocation;
   }
 
-  constructor() {}
+  constructor(@Inject('KOProjectURL') private projectURL: string) {}
 
   ngOnInit() {
     this._initWidget();
@@ -52,6 +52,14 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
   ngAfterContentInit() {
     this._validateWidgetInputs();
     this._initPageLocation();
+  }
+
+  /** Opens the widget. */
+  open() {
+    if (!window['__ko16']) {
+      return;
+    }
+    window['__ko16']._toggleOpen();
   }
 
   /**
@@ -82,8 +90,8 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
    * @private
    */
   private _validateProductURL() {
-    if (!this.projectURL) {
-      throw getKnowledgeWidgetPoductURLMissingError();
+    if (!this.projectURL || !urlValidatorRegex.test(this.projectURL)) {
+      throw getKnowledgeWidgetInvalidProductURLError();
     }
   }
 
@@ -105,7 +113,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
     const ko = document.createElement('script');
     ko.type = 'text/javascript';
     ko.async = true;
-    ko.src = `${this.projectURL}?__pc=${this.projectKey}`;
+    ko.src = `${this.projectURL}/javascript/ko-index?__pc=${this.projectKey}`;
     document.head.appendChild(ko);
   }
 

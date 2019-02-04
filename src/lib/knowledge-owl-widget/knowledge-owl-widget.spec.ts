@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { KnowledgeOwlWidgetModule } from './index';
 import {
   getKnowledgeWidgetPoductKeyMissingError,
-  getKnowledgeWidgetPoductURLMissingError
+  getKnowledgeWidgetInvalidProductURLError
 } from './knowledge-owl-widget-errors';
 
 @Component({
@@ -15,33 +15,32 @@ class KnowledgeOwlWidgetWithoutCredentials {}
 
 @Component({
   template: `
-    <knowledge-owl-widget
-      [projectURL]="'http://testProject.com'"
-    ></knowledge-owl-widget>
+    <knowledge-owl-widget></knowledge-owl-widget>
   `
 })
 class KnowledgeOwlWidgetWithoutProjectKey {}
 
 @Component({
   template: `
-    <knowledge-owl-widget
-      [projectURL]="'http://testProject.com'"
-      [projectKey]="'testkey'"
-    ></knowledge-owl-widget>
+    <knowledge-owl-widget [projectKey]="'testkey'"></knowledge-owl-widget>
   `
 })
 class KnowledgeOwlWidgetWithCredentials {}
 
 describe('KnowledgeOwl widget with missing credentials', () => {
   it('should throw KnowledgeWidgetProductURLMissingError error', async(() => {
-    const fixture = createComponent(KnowledgeOwlWidgetWithoutCredentials);
+    const fixture = createComponent(KnowledgeOwlWidgetWithoutCredentials, [
+      { provide: 'KOProjectURL', useValue: 'wrong url' }
+    ]);
     expect(() => fixture.detectChanges()).toThrowError(
-      getKnowledgeWidgetPoductURLMissingError().message
+      getKnowledgeWidgetInvalidProductURLError().message
     );
   }));
 
   it('should throw KnowledgeWidgetProductKeyMissingError error', async(() => {
-    const fixture = createComponent(KnowledgeOwlWidgetWithoutProjectKey);
+    const fixture = createComponent(KnowledgeOwlWidgetWithoutProjectKey, [
+      { provide: 'KOProjectURL', useValue: 'https://knowledgeowl.com' }
+    ]);
     expect(() => fixture.detectChanges()).toThrowError(
       getKnowledgeWidgetPoductKeyMissingError().message
     );
@@ -50,7 +49,9 @@ describe('KnowledgeOwl widget with missing credentials', () => {
 
 describe('KnowledgeOwl widget', () => {
   it('should not throw error when given correct inputs', async(() => {
-    const fixture = createComponent(KnowledgeOwlWidgetWithCredentials);
+    const fixture = createComponent(KnowledgeOwlWidgetWithCredentials, [
+      { provide: 'KOProjectURL', useValue: 'https://knowledgeowl.com' }
+    ]);
     expect(() => fixture.detectChanges()).not.toThrowError();
   }));
 });
