@@ -4,16 +4,11 @@ import {
   Component,
   ElementRef,
   HostListener,
+  Inject,
   Input,
   ViewEncapsulation
 } from '@angular/core';
-import {
-  getKnowledgeLinkArticleMissingError,
-  getKnowledgeLinkInvalidArticleError
-} from './knowledge-owl-widget-errors';
-
-/** Regex to validate article URL is valid or not */
-const urlValidatorRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-errors';
 
 /**
  * Knowledge Owl Link
@@ -29,7 +24,10 @@ export class KnowledgeOwlLink implements AfterContentInit {
   @Input()
   knowledgeOwlLink: string;
 
-  constructor(protected elementRef: ElementRef) {}
+  constructor(
+    protected elementRef: ElementRef,
+    @Inject('KOProjectURL') private projectURL: string
+  ) {}
 
   getHostElement(): HTMLElement {
     return this.elementRef.nativeElement;
@@ -62,6 +60,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
    * @private
    */
   private _initLink() {
+    this.knowledgeOwlLink = `${this.projectURL}/help/${this.knowledgeOwlLink}`; // Updating article link to have complete URL
     const nativeElement = this.getHostElement();
     if (nativeElement.tagName === 'A') {
       // Updating link for <a>
@@ -75,7 +74,6 @@ export class KnowledgeOwlLink implements AfterContentInit {
    */
   private _validateLinkInputs() {
     this._validateArticlePresence();
-    this._validateArticleURLFormat();
   }
 
   /**
@@ -85,19 +83,6 @@ export class KnowledgeOwlLink implements AfterContentInit {
   private _validateArticlePresence() {
     if (!this.knowledgeOwlLink) {
       throw getKnowledgeLinkArticleMissingError();
-    }
-  }
-
-  /**
-   * Validates format of article URL for link
-   * @private
-   */
-  private _validateArticleURLFormat() {
-    if (
-      !this.knowledgeOwlLink.trim() ||
-      !urlValidatorRegex.test(this.knowledgeOwlLink)
-    ) {
-      throw getKnowledgeLinkInvalidArticleError();
     }
   }
 }
