@@ -75,6 +75,20 @@ class MyComponent {
 }
 ```
 
+### Open the article in widget programmatically
+
+The widget exposes an API to open/close widget with article programmatically.
+
+```sh
+class MyComponent {
+  @ViewChild(KnowledgeOwlWidget) widget: KnowledgeOwlWidget;
+
+  someMethod() {
+    this.widget.open('article-name');
+  }
+}
+```
+
 ## Directives
 
 ### `KnowledgeOwlLink`
