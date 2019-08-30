@@ -1,24 +1,19 @@
 import {
   AfterContentInit,
-  ChangeDetectionStrategy,
-  Component,
   ElementRef,
   HostListener,
   Inject,
   Input,
-  ViewEncapsulation
+  Directive
 } from '@angular/core';
 import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-errors';
 
 /**
  * Knowledge Owl Link
  */
-@Component({
+@Directive({
   selector: `a[knowledgeOwlLink]`,
-  exportAs: 'knowledgeOwlLink',
-  templateUrl: 'knowledge-owl-link.html',
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  exportAs: 'knowledgeOwlLink'
 })
 export class KnowledgeOwlLink implements AfterContentInit {
   @Input()
