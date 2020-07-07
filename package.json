@@ -7,7 +7,7 @@
     "url": "https://github.com/scheduleonce/knowledgeowl-angular"
   },
   "license": "MIT",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
@@ -22,7 +22,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.13.9",
+    "@angular-devkit/build-angular": "0.13.10",
     "@angular-devkit/build-ng-packagr": "0.8.0",
     "@angular/cdk": "7.3.0",
     "@angular/cli": "6.2.9",
@@ -39,7 +39,7 @@
     "codelyzer": "4.3.0",
     "jasmine-core": "2.99.1",
     "jasmine-spec-reporter": "4.2.1",
-    "karma": "3.0.0",
+    "karma": "5.1.0",
     "karma-chrome-launcher": "2.2.0",
     "karma-coverage-istanbul-reporter": "2.0.4",
     "karma-jasmine": "1.1.2",
@@ -47,7 +47,7 @@
     "karma-junit-reporter": "1.2.0",
     "ng-packagr": "4.6.0",
     "prettier": "1.16.3",
-    "protractor": "5.4.2",
+    "protractor": "7.0.0",
     "rxjs": "6.2.2",
     "ts-node": "7.0.1",
     "tsickle": ">=0.29.0",
