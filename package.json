@@ -7,7 +7,7 @@
     "url": "https://github.com/scheduleonce/knowledgeowl-angular"
   },
   "license": "MIT",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
