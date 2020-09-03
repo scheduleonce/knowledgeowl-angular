@@ -18,7 +18,9 @@
     "fix:prettier": "prettier --write \"**/*.{ts,js,css,scss,md,html}\"",
     "npm-pack": "cd dist/knowledgeowl-angular && npm pack",
     "package": "npm run build && npm run npm-pack && cp README.md dist/knowledgeowl-angular/",
-    "publish": "cd dist/knowledgeowl-angular && npm publish"
+    "publish": "cd dist/knowledgeowl-angular && npm publish",
+    "test:lint": "eslint --ext .ts src/lib",
+    "fix:lint": "eslint --ext .ts src/lib --fix"
   },
   "dependencies": {},
   "devDependencies": {
@@ -33,10 +35,12 @@
     "@angular/language-service": "6.1.10",
     "@angular/platform-browser": "6.1.10",
     "@angular/platform-browser-dynamic": "6.1.10",
+    "@oncehub/eslint-config": "^1.1.1",
     "@types/jasmine": "2.8.15",
     "@types/jasminewd2": "2.0.6",
     "@types/node": "8.9.5",
     "codelyzer": "4.3.0",
+    "eslint": "^7.8.1",
     "jasmine-core": "2.99.1",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "5.1.0",
@@ -52,7 +56,6 @@
     "ts-node": "7.0.1",
     "tsickle": ">=0.29.0",
     "tslib": "1.9.3",
-    "tslint": "5.11.0",
     "typescript": "2.9.2",
     "zone.js": "0.8.29"
   }

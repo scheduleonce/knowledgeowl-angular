@@ -107,9 +107,9 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
    * @private
    */
   private _initWidget() {
-    const _ko16_p = [];
-    _ko16_p.push(['_setProject', this.projectKey]);
-    window['_ko16_p'] = _ko16_p;
+    const ko16p = [];
+    ko16p.push(['_setProject', this.projectKey]);
+    window['_ko16_p'] = ko16p;
   }
 
   /**
