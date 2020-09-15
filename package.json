@@ -10,7 +10,7 @@
   "version": "0.1.10-beta.0",
   "scripts": {
     "ng": "ng",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint --format stylish",
     "e2e": "ng e2e",
