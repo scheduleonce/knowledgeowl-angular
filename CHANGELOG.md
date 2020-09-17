@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2020-09-15
+
+### Added
+
+- NA
+
+### Changed
+
+- Updated project knowledgeowl-angular to use Angular 9
+
+### Removed
+
+- NA
+
+### Fixed
+
+- [`ONCEHUB-32452`](https://scheduleonce.atlassian.net/browse/ONCEHUB-32452) Fixed package vulnerabilities for npm-registry-fetch
+
 ## [0.1.9] - 2020-07-07
 
 ### Added

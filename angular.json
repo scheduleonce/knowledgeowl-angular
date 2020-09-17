@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "src/tsconfig.lib.json",
             "project": "src/package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
