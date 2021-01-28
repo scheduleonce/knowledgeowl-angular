@@ -4,9 +4,7 @@ import { KnowledgeOwlLinkModule } from './index';
 import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-errors';
 
 @Component({
-  template: `
-    <a knowledgeOwlLink>Test link</a>
-  `
+  template: `<a knowledgeOwlLink>Test link</a>`
 })
 class KnowledgeOwlLinkWithoutArticle {}
 

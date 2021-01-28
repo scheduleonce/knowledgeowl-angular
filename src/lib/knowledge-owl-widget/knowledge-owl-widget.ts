@@ -60,9 +60,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
       return;
     }
     if (article) {
-      const widgetHref = `${
-        this.projectURL
-      }/help/fetch-article/hash/${article}`;
+      const widgetHref = `${this.projectURL}/help/fetch-article/hash/${article}`;
       window['__ko16'].openArticle(widgetHref);
     } else {
       window['__ko16']._toggleOpen();
