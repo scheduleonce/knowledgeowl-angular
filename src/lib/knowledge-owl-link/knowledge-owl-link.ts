@@ -4,7 +4,7 @@ import {
   HostListener,
   Inject,
   Input,
-  Directive
+  Directive,
 } from '@angular/core';
 import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-errors';
 
@@ -13,7 +13,7 @@ import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-erro
  */
 @Directive({
   selector: `a[knowledgeOwlLink]`,
-  exportAs: 'knowledgeOwlLink'
+  exportAs: 'knowledgeOwlLink',
 })
 export class KnowledgeOwlLink implements AfterContentInit {
   @Input()

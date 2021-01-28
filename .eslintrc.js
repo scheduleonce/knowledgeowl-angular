@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@oncehub/eslint-config']
+  extends: ['@oncehub/eslint-config'],
 };

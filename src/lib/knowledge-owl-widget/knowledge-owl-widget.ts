@@ -5,11 +5,11 @@ import {
   Inject,
   Input,
   OnInit,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import {
   getKnowledgeWidgetPoductKeyMissingError,
-  getKnowledgeWidgetInvalidProductURLError
+  getKnowledgeWidgetInvalidProductURLError,
 } from './knowledge-owl-widget-errors';
 
 /** Regex to validate article URL is valid or not */
@@ -21,7 +21,7 @@ const urlValidatorRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'knowledgeOwlWidget',
-  providers: []
+  providers: [],
 })
 export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
   /** Flag to check initial page location updated */
