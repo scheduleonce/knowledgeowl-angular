@@ -12,7 +12,7 @@
     "ng": "ng",
     "build": "ng build --prod",
     "test": "ng test",
-    "lint": "ng lint --format stylish",
+    "lint": "npm run test:lint",
     "e2e": "ng e2e",
     "prettier": "prettier --list-different \"**/*.{ts,js,css,scss,md,html}\"",
     "fix:prettier": "prettier --write \"**/*.{ts,js,css,scss,md,html}\"",
