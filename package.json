@@ -13,7 +13,6 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "npm run test:lint",
-    "e2e": "ng e2e",
     "prettier": "prettier --list-different \"**/*.{ts,js,css,scss,md,html}\"",
     "fix:prettier": "prettier --write \"**/*.{ts,js,css,scss,md,html}\"",
     "npm-pack": "cd dist/knowledgeowl-angular && npm pack",

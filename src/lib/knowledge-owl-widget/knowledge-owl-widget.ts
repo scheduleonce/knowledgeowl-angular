@@ -38,24 +38,24 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
     this._updatePageLocation();
   }
 
-  get pageLocation() {
+  get pageLocation(): string {
     return this._pageLocation;
   }
 
   constructor(@Inject('KOProjectURL') private projectURL: string) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._initWidget();
     this._loadScript();
   }
 
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     this._validateWidgetInputs();
     this._initPageLocation();
   }
 
   /** Opens the widget. */
-  open(article = '') {
+  open(article = ''): void {
     if (!window['__ko16']) {
       return;
     }
@@ -72,7 +72,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
    *
    * @private
    */
-  protected _validateWidgetInputs() {
+  protected _validateWidgetInputs(): void {
     this._validateProductURL();
     this._validateProductKey();
   }

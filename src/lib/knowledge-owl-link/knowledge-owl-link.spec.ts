@@ -39,13 +39,11 @@ describe('KnowledgeOwl link', () => {
 
 const createComponent = <T>(
   component: Type<T>,
-  providers: Provider[] = [],
-  imports: any[] = [],
-  declarations: any[] = []
+  providers: Provider[] = []
 ): ComponentFixture<T> => {
   TestBed.configureTestingModule({
-    imports: [KnowledgeOwlLinkModule, ...imports],
-    declarations: [component, ...declarations],
+    imports: [KnowledgeOwlLinkModule],
+    declarations: [component],
     providers,
   }).compileComponents();
 

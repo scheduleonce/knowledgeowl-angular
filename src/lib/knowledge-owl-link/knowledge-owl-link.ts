@@ -28,13 +28,13 @@ export class KnowledgeOwlLink implements AfterContentInit {
     return this.elementRef.nativeElement;
   }
 
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     this._validateLinkInputs();
     this._initLink();
   }
 
   @HostListener('click', ['$event'])
-  openArticle(event: Event) {
+  openArticle(event: Event): void {
     event.preventDefault();
     // Convert the KO link into the widget link
     const widgetHref =

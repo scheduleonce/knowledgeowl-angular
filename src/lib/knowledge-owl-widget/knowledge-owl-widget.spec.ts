@@ -54,13 +54,11 @@ describe('KnowledgeOwl widget', () => {
 
 const createComponent = <T>(
   component: Type<T>,
-  providers: Provider[] = [],
-  imports: any[] = [],
-  declarations: any[] = []
+  providers: Provider[] = []
 ): ComponentFixture<T> => {
   TestBed.configureTestingModule({
-    imports: [KnowledgeOwlWidgetModule, ...imports],
-    declarations: [component, ...declarations],
+    imports: [KnowledgeOwlWidgetModule],
+    declarations: [component],
     providers,
   }).compileComponents();
 
