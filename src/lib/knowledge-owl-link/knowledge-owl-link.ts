@@ -52,6 +52,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
 
   /**
    * Initialize link
+   *
    * @private
    */
   private _initLink() {
@@ -65,6 +66,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
 
   /**
    * Validates all required inputs of knowledge-owl-link
+   *
    * @private
    */
   private _validateLinkInputs() {
@@ -73,6 +75,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
 
   /**
    * Validates presence of article URL for link
+   *
    * @private
    */
   private _validateArticlePresence() {

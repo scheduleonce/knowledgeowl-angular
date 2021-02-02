@@ -1,4 +1,3 @@
 /** @docs-private */
-export function getKnowledgeLinkArticleMissingError(): Error {
-  return Error('knowledge-owl-link requires article URL as input.');
-}
+export const getKnowledgeLinkArticleMissingError = (): Error =>
+  Error('knowledge-owl-link requires article URL as input.');

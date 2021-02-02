@@ -69,6 +69,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Validates the widget's inputs.
+   *
    * @private
    */
   protected _validateWidgetInputs() {
@@ -82,6 +83,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Throws an error if the productKey input is missing.
+   *
    * @private
    */
   private _validateProductKey() {
@@ -92,6 +94,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Throws an error if the productURL input is missing.
+   *
    * @private
    */
   private _validateProductURL() {
@@ -102,6 +105,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Initializes the widget.
+   *
    * @private
    */
   private _initWidget() {
@@ -112,6 +116,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Loads script into page
+   *
    * @private
    */
   private _loadScript() {
@@ -144,6 +149,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Update page location on change
+   *
    * @private
    */
   private _updatePageLocation() {

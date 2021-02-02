@@ -37,12 +37,12 @@ describe('KnowledgeOwl link', () => {
   }));
 });
 
-function createComponent<T>(
+const createComponent = <T>(
   component: Type<T>,
   providers: Provider[] = [],
   imports: any[] = [],
   declarations: any[] = []
-): ComponentFixture<T> {
+): ComponentFixture<T> => {
   TestBed.configureTestingModule({
     imports: [KnowledgeOwlLinkModule, ...imports],
     declarations: [component, ...declarations],
@@ -50,4 +50,4 @@ function createComponent<T>(
   }).compileComponents();
 
   return TestBed.createComponent<T>(component);
-}
+};
