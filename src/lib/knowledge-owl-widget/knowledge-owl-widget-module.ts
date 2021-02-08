@@ -6,6 +6,6 @@ import { KnowledgeOwlWidget } from './knowledge-owl-widget';
   imports: [CommonModule],
   exports: [KnowledgeOwlWidget],
   declarations: [KnowledgeOwlWidget],
-  providers: []
+  providers: [],
 })
 export class KnowledgeOwlWidgetModule {}

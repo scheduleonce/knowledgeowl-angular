@@ -4,7 +4,7 @@ import {
   HostListener,
   Inject,
   Input,
-  Directive
+  Directive,
 } from '@angular/core';
 import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-errors';
 
@@ -13,7 +13,7 @@ import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-erro
  */
 @Directive({
   selector: `a[knowledgeOwlLink]`,
-  exportAs: 'knowledgeOwlLink'
+  exportAs: 'knowledgeOwlLink',
 })
 export class KnowledgeOwlLink implements AfterContentInit {
   @Input()
@@ -28,13 +28,13 @@ export class KnowledgeOwlLink implements AfterContentInit {
     return this.elementRef.nativeElement;
   }
 
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     this._validateLinkInputs();
     this._initLink();
   }
 
   @HostListener('click', ['$event'])
-  openArticle(event: Event) {
+  openArticle(event: Event): void {
     event.preventDefault();
     // Convert the KO link into the widget link
     const widgetHref =
@@ -52,6 +52,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
 
   /**
    * Initialize link
+   *
    * @private
    */
   private _initLink() {
@@ -65,6 +66,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
 
   /**
    * Validates all required inputs of knowledge-owl-link
+   *
    * @private
    */
   private _validateLinkInputs() {
@@ -73,6 +75,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
 
   /**
    * Validates presence of article URL for link
+   *
    * @private
    */
   private _validateArticlePresence() {

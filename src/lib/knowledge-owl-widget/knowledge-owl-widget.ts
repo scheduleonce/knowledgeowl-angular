@@ -5,11 +5,11 @@ import {
   Inject,
   Input,
   OnInit,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import {
   getKnowledgeWidgetPoductKeyMissingError,
-  getKnowledgeWidgetInvalidProductURLError
+  getKnowledgeWidgetInvalidProductURLError,
 } from './knowledge-owl-widget-errors';
 
 /** Regex to validate article URL is valid or not */
@@ -21,7 +21,7 @@ const urlValidatorRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'knowledgeOwlWidget',
-  providers: []
+  providers: [],
 })
 export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
   /** Flag to check initial page location updated */
@@ -38,31 +38,29 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
     this._updatePageLocation();
   }
 
-  get pageLocation() {
+  get pageLocation(): string {
     return this._pageLocation;
   }
 
   constructor(@Inject('KOProjectURL') private projectURL: string) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._initWidget();
     this._loadScript();
   }
 
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     this._validateWidgetInputs();
     this._initPageLocation();
   }
 
   /** Opens the widget. */
-  open(article = '') {
+  open(article = ''): void {
     if (!window['__ko16']) {
       return;
     }
     if (article) {
-      const widgetHref = `${
-        this.projectURL
-      }/help/fetch-article/hash/${article}`;
+      const widgetHref = `${this.projectURL}/help/fetch-article/hash/${article}`;
       window['__ko16'].openArticle(widgetHref);
     } else {
       window['__ko16']._toggleOpen();
@@ -71,9 +69,10 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Validates the widget's inputs.
+   *
    * @private
    */
-  protected _validateWidgetInputs() {
+  protected _validateWidgetInputs(): void {
     this._validateProductURL();
     this._validateProductKey();
   }
@@ -84,6 +83,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Throws an error if the productKey input is missing.
+   *
    * @private
    */
   private _validateProductKey() {
@@ -94,6 +94,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Throws an error if the productURL input is missing.
+   *
    * @private
    */
   private _validateProductURL() {
@@ -104,6 +105,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Initializes the widget.
+   *
    * @private
    */
   private _initWidget() {
@@ -114,6 +116,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Loads script into page
+   *
    * @private
    */
   private _loadScript() {
@@ -146,6 +149,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
 
   /**
    * Update page location on change
+   *
    * @private
    */
   private _updatePageLocation() {
