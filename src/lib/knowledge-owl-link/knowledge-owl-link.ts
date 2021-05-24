@@ -37,7 +37,7 @@ export class KnowledgeOwlLink implements AfterContentInit {
   openArticle(event: Event): void {
     event.preventDefault();
     // Convert the KO link into the widget link
-    if(this.knowledgeOwlLink.includes('#') == true){
+    if(this.knowledgeOwlLink.includes('#')){
       const widgetlink = this.knowledgeOwlLink.split('#');
       const widgetlink1 = widgetlink[0].replace('/help/', '/help/fetch-article/hash/') + '?widget=true';
       const widgetlink2 = '#' + widgetlink[1];
