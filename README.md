@@ -102,3 +102,25 @@ Exported as: `knowledgeOwlLink`
 | Name                                     | Required | Description               |
 | ---------------------------------------- | -------- | ------------------------- |
 | @Input() <br/>`knowledgeOwlLink: string` | true     | KnowledgeOwl Article Name |
+
+
+## How to publish new version 
+
+Introduce new version
+
+```bash
+npm version <major | minor | patch>
+```
+
+Run following command to package
+
+```bash
+npm run package
+```
+
+Run following command to publish
+
+```bash
+npm run publish
+```
+
