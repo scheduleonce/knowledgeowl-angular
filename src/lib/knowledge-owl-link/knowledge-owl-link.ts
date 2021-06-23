@@ -37,18 +37,20 @@ export class KnowledgeOwlLink implements AfterContentInit {
   openArticle(event: Event): void {
     event.preventDefault();
     // Convert the KO link into the widget link
-    if(this.knowledgeOwlLink.includes('#')){
+    let widgetHref;
+    if (this.knowledgeOwlLink.includes('#')) {
       const widgetlink = this.knowledgeOwlLink.split('#');
-      const widgetlink1 = widgetlink[0].replace('/help/', '/help/fetch-article/hash/') + '?widget=true';
+      const widgetlink1 =
+        widgetlink[0].replace('/help/', '/help/fetch-article/hash/') +
+        '?widget=true';
       const widgetlink2 = '#' + widgetlink[1];
-      var widgetHref = widgetlink1.concat(widgetlink2);
-    } 
-    else{
-      var widgetHref =
-      this.knowledgeOwlLink.replace('/help/', '/help/fetch-article/hash/') +
-      '?widget=true';
+      widgetHref = widgetlink1.concat(widgetlink2);
+    } else {
+      widgetHref =
+        this.knowledgeOwlLink.replace('/help/', '/help/fetch-article/hash/') +
+        '?widget=true';
     }
-    
+
     if (window['__ko16']) {
       // Wait until widget loads completely
       window['__ko16'].openArticle(widgetHref);
