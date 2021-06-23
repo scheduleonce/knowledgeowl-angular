@@ -22,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - [`ONCEHUB-43676`](https://scheduleonce.atlassian.net/browse/ONCEHUB-43676) Fixed package vulnerabilities
+- [`ONCEHUB-42560`](https://scheduleonce.atlassian.net/browse/ONCEHUB-42560) Fixed package vulnerabilities
+- [`ONCEHUB-42564`](https://scheduleonce.atlassian.net/browse/ONCEHUB-42564) Fixed package vulnerabilities
+- [`ONCEHUB-43237`](https://scheduleonce.atlassian.net/browse/ONCEHUB-43237) Fixed package vulnerabilities
 
 ## [2.0.1] - 2021-04-16
 
