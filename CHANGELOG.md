@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.1] - 2022-01-24
+
+### Added
+
+- NA
+
+### Changed
+
+- NA
+
+### Removed
+
+- NA
+
+### Fixed
+
+- [`ONCEHUB-50115`](https://scheduleonce.atlassian.net/browse/ONCEHUB-50115) Fixed package vulnerabilities
+- [`ONCEHUB-50604`](https://scheduleonce.atlassian.net/browse/ONCEHUB-50604) Fixed package vulnerabilities
+- [`ONCEHUB-50609`](https://scheduleonce.atlassian.net/browse/ONCEHUB-50609) Fixed package vulnerabilities
+- [`ONCEHUB-50641`](https://scheduleonce.atlassian.net/browse/ONCEHUB-50641) Fixed package vulnerabilities
+- [`ONCEHUB-50756`](https://scheduleonce.atlassian.net/browse/ONCEHUB-50756) Fixed package vulnerabilities
+
 ## [2.0.4] - 2021-06-23
 
 ### Added
