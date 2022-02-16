@@ -8,8 +8,8 @@
     "url": "https://github.com/scheduleonce/knowledgeowl-angular"
   },
   "peerDependencies": {
-    "@angular/common": "12.2.7",
-    "@angular/core": "12.2.7"
+    "@angular/common": "13.2.2",
+    "@angular/core": "13.2.2"
   },
   "ngPackage": {
     "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
