@@ -1,6 +1,6 @@
 {
   "name": "knowledgeowl-angular",
-  "version": "3.0.3-beta.0",
+  "version": "3.0.3-beta.1",
   "description": "Knowledge Owl Angular",
   "license": "MIT",
   "repository": {
@@ -8,14 +8,7 @@
     "url": "https://github.com/scheduleonce/knowledgeowl-angular"
   },
   "peerDependencies": {
-    "@angular/common": "12.2.7",
-    "@angular/core": "12.2.7"
-  },
-  "ngPackage": {
-    "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-    "dest": "../dist/knowledgeowl-angular",
-    "lib": {
-      "entryFile": "public_api.ts"
-    }
+    "@angular/common": "13.2.2",
+    "@angular/core": "13.2.2"
   }
 }
