@@ -26,7 +26,7 @@ class KnowledgeOwlWidgetWithCredentials {}
 describe('KnowledgeOwl widget with missing credentials', () => {
   it('should throw KnowledgeWidgetProductURLMissingError error', () => {
     const fixture = createComponent(KnowledgeOwlWidgetWithoutCredentials, [
-      { provide: 'KOProjectURL', useValue: 'wrong url' },
+      { provide: 'KOProjectURL', useValue: 'https://' },
     ]);
     expect(() => fixture.detectChanges()).toThrowError(
       getKnowledgeWidgetInvalidProductURLError().message
