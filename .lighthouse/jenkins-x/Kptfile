@@ -1,0 +1,11 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+    name: jenkins-x
+upstream:
+    type: git
+    git:
+        commit: 176d53c564ef7afce9af3161a11b35d53a265903
+        repo: https://github.com/scheduleonce/jx3-pipeline-catalog
+        directory: /packs/knowledgeowl-angular/.lighthouse/jenkins-x
+        ref: master
