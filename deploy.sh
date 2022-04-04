@@ -4,6 +4,8 @@ set -e
 node package-deploy/npm-login.js $(cat "/etc/npm-cred/NPM_AUTH_TOKEN")
 npm whoami
 npm i
-npm publish
+npm run package
+filename="$(npm pack --dry-run | tail -n 1)"
+npm publish dist/knowledgeowl-angular/$filename --registry=https://registry.npmjs.org/
 
-echo "package pushed to NPM successfully"
+echo "$filename package pushed to NPM successfully"
