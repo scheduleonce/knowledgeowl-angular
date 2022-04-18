@@ -240,7 +240,7 @@ spec:
           name: setup-builder-home
           resources: {}
         - args:
-          - sh deploy.sh
+          - sh deploy.sh $PULL_BASE_REF
           command:
           - /bin/sh
           - -c
