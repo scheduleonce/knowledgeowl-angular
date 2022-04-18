@@ -10,11 +10,9 @@ echo "$1"
 
 if [[ "$1" == "qa" ]] || [[ "$1" == "master" ]] || [[ "$1" == "staging" ]] || [[ "$1" == "staging-app2" ]]
 then
-#  npm publish dist/knowledgeowl-angular/$filename --registry=https://registry.npmjs.org/
-  echo "publish main"
+  npm publish dist/knowledgeowl-angular/$filename --registry=https://registry.npmjs.org/
 else
-#  npm publish --tag beta dist/knowledgeowl-angular/$filename --registry=https://registry.npmjs.org/
-  echo "publish beta"
+  npm publish --tag beta dist/knowledgeowl-angular/$filename --registry=https://registry.npmjs.org/
 fi
 
 echo "$filename package pushed to NPM successfully"
