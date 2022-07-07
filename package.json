@@ -7,7 +7,7 @@
     "url": "https://github.com/scheduleonce/knowledgeowl-angular"
   },
   "license": "MIT",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "scripts": {
     "ng": "ng",
     "build": "ng build --configuration production",
@@ -16,7 +16,7 @@
     "prettier": "prettier --list-different \"**/*.{ts,js,css,scss,md,html}\"",
     "fix:prettier": "prettier --write \"**/*.{ts,js,css,scss,md,html}\"",
     "npm-pack": "cd dist/knowledgeowl-angular && npm pack",
-    "package": "npm run build && npm run npm-pack && cp README.md dist/knowledgeowl-angular/",
+    "package": "cp README.md src/ && npm run build && npm run npm-pack",
     "publish": "cd dist/knowledgeowl-angular && npm publish",
     "test:lint": "ng lint knowledgeowl-angular",
     "fix:lint": "ng lint knowledgeowl-angular --fix"
