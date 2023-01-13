@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.9] - 2023-01-04
+
+- [ONCEHUB-62023](https://scheduleonce.atlassian.net/browse/ONCEHUB-62023): CVE-2022-46175 vulnerability found in package json5 in project knowledgeowl-angular
+
+## [4.0.8] - 2022-12-13
+
+- [ONCEHUB-60847](https://scheduleonce.atlassian.net/browse/ONCEHUB-60847): CVE-2022-38900 vulnerability found in package decode-uri-component
+
 ## [4.0.7] - 2022-11-22
 
 ### Updated
