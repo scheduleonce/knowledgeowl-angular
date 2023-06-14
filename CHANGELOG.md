@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.1.1] - 2023-06-14 
+
+- [ONCEHUB-62023] engine.io, socket.io, socket.io-parser vulnerability has been fixed in project knowledgeowl-angular
+
 ## [4.0.9] - 2023-01-04
 
 - [ONCEHUB-62023](https://scheduleonce.atlassian.net/browse/ONCEHUB-62023): CVE-2022-46175 vulnerability found in package json5 in project knowledgeowl-angular
