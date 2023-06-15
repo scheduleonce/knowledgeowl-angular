@@ -22,6 +22,7 @@
     "fix:lint": "ng lint knowledgeowl-angular --fix"
   },
   "dependencies": {
+    "rxjs": "^7.8.1",
     "tslib": "2.3.1"
   },
   "devDependencies": {
