@@ -1,14 +1,14 @@
 {
-  "name": "knowledgeowl-angular",
-  "version": "4.0.0",
-  "description": "Knowledge Owl Angular",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/scheduleonce/knowledgeowl-angular"
-  },
-  "peerDependencies": {
-    "@angular/common": "13.2.3",
-    "@angular/core": "13.2.3"
+    "name": "knowledgeowl-angular",
+    "version": "4.1.2-beta.0",
+    "description": "Knowledge Owl Angular",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/scheduleonce/knowledgeowl-angular"
+    },
+    "peerDependencies": {
+        "@angular/common": "15.2.9",
+        "@angular/core": "15.2.9"
+    }
   }
-}
