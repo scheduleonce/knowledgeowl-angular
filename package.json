@@ -1,13 +1,16 @@
 {
   "name": "@oncehub/knowledgeowl-angular",
-  "description": "KnlwledgeOwl widget integration for Angular",
+  "description": "KnowledgeOwl widget integration for Angular",
   "author": "https://github.com/scheduleonce/knowledgeowl-angular/graphs/contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scheduleonce/knowledgeowl-angular"
+    "url": "git+https://github.com/scheduleonce/knowledgeowl-angular.git"
   },
   "license": "MIT",
   "version": "4.1.5",
+  "exports": {
+    ".": "./dist"
+  },
   "scripts": {
     "ng": "ng",
     "build": "ng build --configuration production",
@@ -17,7 +20,6 @@
     "fix:prettier": "prettier --write \"**/*.{ts,js,css,scss,md,html}\"",
     "npm-pack": "cd dist/knowledgeowl-angular && npm pack",
     "package": "npm run build && cp README.md dist/knowledgeowl-angular/ && npm run npm-pack",
-    "publish": "cd dist/knowledgeowl-angular && npm publish",
     "test:lint": "ng lint knowledgeowl-angular",
     "fix:lint": "ng lint knowledgeowl-angular --fix"
   },
