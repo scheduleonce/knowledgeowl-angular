@@ -1,7 +1,7 @@
 {
   "name": "@oncehub/knowledgeowl-angular",
   "description": "KnowledgeOwl widget integration for Angular",
-  "version": "4.1.10",
+  "version": "4.1.11",
   "author": "https://github.com/scheduleonce/knowledgeowl-angular/graphs/contributors",
   "repository": {
     "type": "git",
