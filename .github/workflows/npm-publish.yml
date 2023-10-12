@@ -17,7 +17,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run build
-      # scoped packages are private by default so need to add public flag
-      - run: npm publish --access public
+      - run: npm run publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
