@@ -10,7 +10,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "build": "ng build --configuration production",
+    "build": "ng build --configuration production && cp README.md dist/knowledgeowl-angular",
     "test": "ng test",
     "lint": "npm run test:lint",
     "prettier": "prettier --list-different \"**/*.{ts,js,css,scss,md,html}\"",
