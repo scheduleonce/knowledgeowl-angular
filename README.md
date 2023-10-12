@@ -1,7 +1,6 @@
 # knowledgeowl-angular
 
-[![Build Status](https://travis-ci.org/scheduleonce/knowledgeowl-angular.svg?branch=master)](https://travis-ci.org/scheduleonce/knowledgeowl-angular)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Build status](https://github.com/scheduleonce/knowledgeowl-angular/actions/workflows/node.js.yml/badge.svg)](https://github.com/scheduleonce/knowledgeowl-angular/actions)
 
 Project that enables angular application to integrate KnowledgeOwl widget. This gives following features:
 
@@ -13,7 +12,7 @@ Project that enables angular application to integrate KnowledgeOwl widget. This 
 You can use npm command line tool to install package.
 
 ```sh
-npm install knowledgeowl-angular
+npm install @oncehub/knowledgeowl-angular
 ```
 
 ## How to use?
@@ -21,7 +20,7 @@ npm install knowledgeowl-angular
 Import the Module:
 
 ```sh
-import {KnowledgeOwlWidgetModule, KnowledgeOwlLinkModule} from 'knowledgeowl-angular';
+import {KnowledgeOwlWidgetModule, KnowledgeOwlLinkModule} from '@oncehub/knowledgeowl-angular';
 
 @NgModule({
   ...
@@ -102,3 +101,11 @@ Exported as: `knowledgeOwlLink`
 | Name                                     | Required | Description               |
 | ---------------------------------------- | -------- | ------------------------- |
 | @Input() <br/>`knowledgeOwlLink: string` | true     | KnowledgeOwl Article Name |
+
+### Development
+
+Package is automatically pushed to npm when [creating a new release](.github/workflows/npm-publish.yml) on Github. Check out the release section in the repo. Read more about releases [here](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+
+### License
+
+This module is licensed under the MIT License. See the LICENSE file for details.
