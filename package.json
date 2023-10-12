@@ -1,5 +1,5 @@
 {
-  "name": "knowledgeowl-angular",
+  "name": "@oncehub/knowledgeowl-angular",
   "description": "KnlwledgeOwl widget integration for Angular",
   "author": "https://github.com/scheduleonce/knowledgeowl-angular/graphs/contributors",
   "repository": {
