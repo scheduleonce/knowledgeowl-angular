@@ -8,9 +8,9 @@
   },
   "license": "MIT",
   "version": "4.1.6",
-  "exports": {
-    ".": "./dist"
-  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "ng": "ng",
     "build": "ng build --configuration production",
