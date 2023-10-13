@@ -2,7 +2,7 @@
 
 [![Build status](https://github.com/scheduleonce/knowledgeowl-angular/actions/workflows/ci.yml/badge.svg)](https://github.com/scheduleonce/knowledgeowl-angular/actions)
 
-Project that enables angular application to integrate KnowledgeOwl widget. This gives following features:
+Project that enables angular application to integrate [KnowledgeOwl widget](https://www.knowledgeowl.com). This gives following features:
 
 1. Integrate KnowledgeOwl angular widget into application.
 2. Link HTML element to KnowledgeOwl article.
@@ -33,7 +33,7 @@ export class AppModule { }
 
 Add widget in app.component.html
 
-```sh
+```tsx
 <knowledge-owl-widget
     [projectKey]="'projectKeyProvidedByKnowledgeOwl'"
 ></knowledge-owl-widget>
@@ -41,7 +41,7 @@ Add widget in app.component.html
 
 ## How to link article to `<a>` or `button`?
 
-```sh
+```tsx
 <a knowledgeOwlLink="test-article"></a>
 ```
 
@@ -64,7 +64,7 @@ Exported as: `knowledgeOwlWidget`
 
 The widget exposes an API to open/close programmatically.
 
-```sh
+```ts
 class MyComponent {
   @ViewChild(KnowledgeOwlWidget) widget: KnowledgeOwlWidget;
 
@@ -78,7 +78,7 @@ class MyComponent {
 
 The widget exposes an API to open/close widget with article programmatically.
 
-```sh
+```ts
 class MyComponent {
   @ViewChild(KnowledgeOwlWidget) widget: KnowledgeOwlWidget;
 
