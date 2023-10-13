@@ -19,7 +19,7 @@ npm install @oncehub/knowledgeowl-angular
 
 Import the Module:
 
-```sh
+```ts
 import {KnowledgeOwlWidgetModule, KnowledgeOwlLinkModule} from '@oncehub/knowledgeowl-angular';
 
 @NgModule({
