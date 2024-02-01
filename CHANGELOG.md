@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.1.4] - 2024-02-01
+
+- [ONCEHUB-77374](https://scheduleonce.atlassian.net/browse/ONCEHUB-77374) fixed vulnerability found in package vite 
+
 ## [4.1.3] - 2023-09-29
 
 - [ONCEHUB-65303](https://scheduleonce.atlassian.net/browse/ONCEHUB-65303) Final upgrade to Angular version 16 on knowledge-owl
