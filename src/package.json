@@ -8,7 +8,7 @@
       "url": "https://github.com/scheduleonce/knowledgeowl-angular"
     },
     "peerDependencies": {
-        "@angular/common": "16.1.5",
-        "@angular/core": "16.1.5"
+      "@angular/common": "17.3.11",
+      "@angular/core": "17.3.11"
     }
   }
