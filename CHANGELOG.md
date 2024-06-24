@@ -5,6 +5,59 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.1.4] - 2024-02-01
+
+- [ONCEHUB-77374](https://scheduleonce.atlassian.net/browse/ONCEHUB-77374) fixed vulnerability found in package vite 
+
+## [4.1.3] - 2023-09-29
+
+- [ONCEHUB-65303](https://scheduleonce.atlassian.net/browse/ONCEHUB-65303) Final upgrade to Angular version 16 on knowledge-owl
+
+## [4.1.3-beta.0] - 2023-07-14
+
+- [ONCEHUB-65303] Upgrade Angular app to version 16 on knowledge-owl
+
+## [4.1.2-beta.0] - 2023-06-16
+
+- [ONCEHUB-65303] Upgrade Angular app to version 15 on knowledge-owl
+
+## [4.1.1] - 2023-06-14
+
+- [ONCEHUB-62023] engine.io, socket.io, socket.io-parser vulnerability has been fixed in project knowledgeowl-angular
+
+## [4.0.9] - 2023-01-04
+
+- [ONCEHUB-62023](https://scheduleonce.atlassian.net/browse/ONCEHUB-62023): CVE-2022-46175 vulnerability found in package json5 in project knowledgeowl-angular
+
+## [4.0.8] - 2022-12-13
+
+- [ONCEHUB-60847](https://scheduleonce.atlassian.net/browse/ONCEHUB-60847): CVE-2022-38900 vulnerability found in package decode-uri-component
+
+## [4.0.7] - 2022-11-22
+
+### Updated
+
+- [ONCEHUB-60383](https://scheduleonce.atlassian.net/browse/ONCEHUB-60383): CVE-2022-37603 vulnerability found in package loader-utils
+- [ONCEHUB-60450](https://scheduleonce.atlassian.net/browse/ONCEHUB-60450): CVE-2022-41940 vulnerability found in package engine.io
+
+## [4.0.6] - 2022-11-09
+
+### Updated
+
+- Fixed loader-utils vulnerability.
+
+## [4.0.5] - 2022-10-31
+
+### Updated
+
+- Fixed socket.io-parser vulnerability.
+
+## [4.0.4] - 2022-07-21
+
+### Updated
+
+- Updated @angular-devkit/build-angular packges to v13 latest.
+
 ## [4.0.3] - 2022-07-06
 
 ### Added
