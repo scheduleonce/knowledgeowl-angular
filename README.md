@@ -102,3 +102,19 @@ Exported as: `knowledgeOwlLink`
 | Name                                     | Required | Description               |
 | ---------------------------------------- | -------- | ------------------------- |
 | @Input() <br/>`knowledgeOwlLink: string` | true     | KnowledgeOwl Article Name |
+
+## How to Publish a new version
+
+
+Run Following command to create a new version
+
+```
+npm version [<new_version> | major | minor | patch]
+```
+
+Run following commands to publish a new version
+
+```
+npm run package
+npm run publish
+```
