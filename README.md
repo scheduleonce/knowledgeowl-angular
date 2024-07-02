@@ -1,9 +1,10 @@
 # knowledgeowl-angular
 
-[![Build Status](https://travis-ci.org/scheduleonce/knowledgeowl-angular.svg?branch=master)](https://travis-ci.org/scheduleonce/knowledgeowl-angular)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Build status](https://github.com/scheduleonce/knowledgeowl-angular/actions/workflows/node.js.yml/badge.svg)](https://github.com/scheduleonce/relative-luminance/actions) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-Project that enables angular application to integrate KnowledgeOwl widget. This gives following features:
+> KnowledgeOwl knowledgebase for Angular
+
+Project that enables Angular applications to integrate [KnowledgeOwl](https://www.knowledgeowl.com) widget. This gives following features:
 
 1. Integrate KnowledgeOwl angular widget into application.
 2. Link HTML element to KnowledgeOwl article.
@@ -13,7 +14,7 @@ Project that enables angular application to integrate KnowledgeOwl widget. This 
 You can use npm command line tool to install package.
 
 ```sh
-npm install knowledgeowl-angular
+npm install @oncehub/knowledgeowl-angular
 ```
 
 ## How to use?
@@ -21,7 +22,7 @@ npm install knowledgeowl-angular
 Import the Module:
 
 ```sh
-import {KnowledgeOwlWidgetModule, KnowledgeOwlLinkModule} from 'knowledgeowl-angular';
+import {KnowledgeOwlWidgetModule, KnowledgeOwlLinkModule} from '@oncehub/knowledgeowl-angular';
 
 @NgModule({
   ...
@@ -65,7 +66,7 @@ Exported as: `knowledgeOwlWidget`
 
 The widget exposes an API to open/close programmatically.
 
-```sh
+```ts
 class MyComponent {
   @ViewChild(KnowledgeOwlWidget) widget: KnowledgeOwlWidget;
 
@@ -79,7 +80,7 @@ class MyComponent {
 
 The widget exposes an API to open/close widget with article programmatically.
 
-```sh
+```ts
 class MyComponent {
   @ViewChild(KnowledgeOwlWidget) widget: KnowledgeOwlWidget;
 
@@ -102,3 +103,15 @@ Exported as: `knowledgeOwlLink`
 | Name                                     | Required | Description               |
 | ---------------------------------------- | -------- | ------------------------- |
 | @Input() <br/>`knowledgeOwlLink: string` | true     | KnowledgeOwl Article Name |
+
+## Development
+
+### How to publish a new version
+
+Create a new version
+
+```sh
+npm version [<new_version> | major | minor | patch]
+```
+
+New version is automatically published to npm when [creating a new release](.github/workflows/npm-publish.yml) on Github. Check out the release section in the repo. Read more about releases [here](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
