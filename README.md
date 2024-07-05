@@ -35,7 +35,7 @@ export class AppModule { }
 
 Add widget in app.component.html
 
-```sh
+```tsx
 <knowledge-owl-widget
     [projectKey]="'projectKeyProvidedByKnowledgeOwl'"
 ></knowledge-owl-widget>
@@ -43,7 +43,7 @@ Add widget in app.component.html
 
 ## How to link article to `<a>` or `button`?
 
-```sh
+```tsx
 <a knowledgeOwlLink="test-article"></a>
 ```
 
