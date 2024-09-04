@@ -1,6 +1,6 @@
 {
-    "name": "knowledgeowl-angular",
-    "version": "4.1.5",
+    "name": "@oncehub/knowledgeowl-angular",
+    "version": "4.1.12",
     "description": "Knowledge Owl Angular",
     "license": "MIT",
     "repository": {
@@ -8,7 +8,7 @@
       "url": "https://github.com/scheduleonce/knowledgeowl-angular"
     },
     "peerDependencies": {
-        "@angular/common": "16.1.5",
-        "@angular/core": "16.1.5"
+      "@angular/common": "18.2.0",
+      "@angular/core": "18.2.0"
     }
   }
