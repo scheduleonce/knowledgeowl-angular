@@ -54,7 +54,7 @@
     "karma-junit-reporter": "2.0.1",
     "ng-packagr": "18.0.0",
     "prettier": "2.5.1",
-    "puppeteer": "13.3.2",
+    "puppeteer": "22.12.1",
     "typescript": "5.4.5",
     "zone.js": "0.14.10"
   }
