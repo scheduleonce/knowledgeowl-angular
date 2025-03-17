@@ -7,7 +7,7 @@
     "url": "git+https://github.com/scheduleonce/knowledgeowl-angular.git"
   },
   "license": "MIT",
-  "version": "5.0.0-beta.5",
+  "version": "5.0.0-beta.6",
   "scripts": {
     "ng": "ng",
     "build": "ng build --configuration production && cp README.md dist/knowledgeowl-angular",
@@ -22,26 +22,26 @@
     "fix:lint": "ng lint knowledgeowl-angular --fix"
   },
   "dependencies": {
-    "rxjs": "^7.8.1",
+    "rxjs": "^7.8.2",
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "18.2.1",
+    "@angular-devkit/build-angular": "19.2.2",
     "@angular-eslint/builder": "^16.3.1",
     "@angular-eslint/eslint-plugin": "^16.3.1",
     "@angular-eslint/eslint-plugin-template": "^16.3.1",
     "@angular-eslint/template-parser": "^16.3.1",
-    "@angular/cli": "18.2.1",
-    "@angular/common": "18.2.0",
-    "@angular/compiler": "18.2.0",
-    "@angular/compiler-cli": "18.2.0",
-    "@angular/core": "18.2.0",
-    "@angular/platform-browser": "18.2.0",
-    "@angular/platform-browser-dynamic": "18.2.0",
+    "@angular/cli": "19.2.2",
+    "@angular/common": "19.2.2",
+    "@angular/compiler": "19.2.2",
+    "@angular/compiler-cli": "19.2.2",
+    "@angular/core": "19.2.2",
+    "@angular/platform-browser": "19.2.2",
+    "@angular/platform-browser-dynamic": "19.2.2",
     "@types/jasmine": "3.10.3",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-jsdoc": "37.9.1",
     "eslint-plugin-prefer-arrow": "1.2.3",
@@ -52,10 +52,10 @@
     "karma-jasmine": "4.0.1",
     "karma-jasmine-html-reporter": "1.7.0",
     "karma-junit-reporter": "2.0.1",
-    "ng-packagr": "18.0.0",
+    "ng-packagr": "19.2.0",
     "prettier": "2.5.1",
-    "puppeteer": "13.3.2",
-    "typescript": "5.4.5",
-    "zone.js": "0.14.10"
+    "puppeteer": "22.12.1",
+    "typescript": "5.8.2",
+    "zone.js": "0.15.0"
   }
 }
