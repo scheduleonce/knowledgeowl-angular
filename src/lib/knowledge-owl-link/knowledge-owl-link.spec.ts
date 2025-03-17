@@ -4,16 +4,18 @@ import { KnowledgeOwlLinkModule } from './index';
 import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-errors';
 
 @Component({
-  template: `<a knowledgeOwlLink>Test link</a>`,
+    template: `<a knowledgeOwlLink>Test link</a>`,
+    standalone: false
 })
 class KnowledgeOwlLinkWithoutArticle {}
 
 @Component({
-  template: `
+    template: `
     <a knowledgeOwlLink="https://knowledgeowl.article.com/help/test-article"
       >Test link</a
     >
   `,
+    standalone: false
 })
 class KnowledgeOwlLinkWithValidInputs {}
 
