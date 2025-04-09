@@ -14,6 +14,7 @@ import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-erro
 @Directive({
   selector: `a[knowledgeOwlLink]`,
   exportAs: 'knowledgeOwlLink',
+  standalone: false,
 })
 export class KnowledgeOwlLink implements AfterContentInit {
   @Input()

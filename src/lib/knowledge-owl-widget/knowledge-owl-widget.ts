@@ -23,6 +23,7 @@ const urlValidatorRegex =
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'knowledgeOwlWidget',
   providers: [],
+  standalone: false,
 })
 export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
   /** Flag to check initial page location updated */

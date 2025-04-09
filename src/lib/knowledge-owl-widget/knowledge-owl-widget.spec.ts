@@ -8,11 +8,13 @@ import {
 
 @Component({
   template: `<knowledge-owl-widget></knowledge-owl-widget>`,
+  standalone: false,
 })
 class KnowledgeOwlWidgetWithoutCredentials {}
 
 @Component({
   template: `<knowledge-owl-widget></knowledge-owl-widget>`,
+  standalone: false,
 })
 class KnowledgeOwlWidgetWithoutProjectKey {}
 
@@ -20,6 +22,7 @@ class KnowledgeOwlWidgetWithoutProjectKey {}
   template: `
     <knowledge-owl-widget [projectKey]="'testkey'"></knowledge-owl-widget>
   `,
+  standalone: false,
 })
 class KnowledgeOwlWidgetWithCredentials {}
 

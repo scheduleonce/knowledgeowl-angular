@@ -5,6 +5,7 @@ import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-erro
 
 @Component({
   template: `<a knowledgeOwlLink>Test link</a>`,
+  standalone: false,
 })
 class KnowledgeOwlLinkWithoutArticle {}
 
@@ -14,6 +15,7 @@ class KnowledgeOwlLinkWithoutArticle {}
       >Test link</a
     >
   `,
+  standalone: false,
 })
 class KnowledgeOwlLinkWithValidInputs {}
 
