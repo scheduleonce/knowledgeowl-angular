@@ -17,13 +17,13 @@ const urlValidatorRegex =
   /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
 @Component({
-    selector: 'knowledge-owl-widget',
-    template: '',
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    exportAs: 'knowledgeOwlWidget',
-    providers: [],
-    standalone: false
+  selector: 'knowledge-owl-widget',
+  template: '',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  exportAs: 'knowledgeOwlWidget',
+  providers: [],
+  standalone: false,
 })
 export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
   /** Flag to check initial page location updated */
