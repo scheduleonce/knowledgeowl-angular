@@ -57,5 +57,8 @@
     "puppeteer": "24.9.0",
     "typescript": "5.8.2",
     "zone.js": "0.15.0"
+  },
+  "overrides": {
+    "tmp": ">=0.2.4"
   }
 }
