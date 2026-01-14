@@ -7,22 +7,22 @@ import {
 } from './knowledge-owl-widget-errors';
 
 @Component({
-    template: `<knowledge-owl-widget></knowledge-owl-widget>`,
-    standalone: false
+  template: `<knowledge-owl-widget></knowledge-owl-widget>`,
+  standalone: false,
 })
 class KnowledgeOwlWidgetWithoutCredentials {}
 
 @Component({
-    template: `<knowledge-owl-widget></knowledge-owl-widget>`,
-    standalone: false
+  template: `<knowledge-owl-widget></knowledge-owl-widget>`,
+  standalone: false,
 })
 class KnowledgeOwlWidgetWithoutProjectKey {}
 
 @Component({
-    template: `
+  template: `
     <knowledge-owl-widget [projectKey]="'testkey'"></knowledge-owl-widget>
   `,
-    standalone: false
+  standalone: false,
 })
 class KnowledgeOwlWidgetWithCredentials {}
 
