@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [5.1.6] - 2026-01-15
+
+- [ONCEHUB-109966](https://scheduleonce.atlassian.net/browse/ONCEHUB-109966) Updated dependencies and fixes
 
 ## [4.1.4] - 2024-02-01
 
