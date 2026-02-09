@@ -5,6 +5,8 @@ import {
   getKnowledgeWidgetPoductKeyMissingError,
   getKnowledgeWidgetInvalidProductURLError,
 } from './knowledge-owl-widget-errors';
+import { KO_PROJECT_URL } from 'ko-project-url.token';
+
 
 @Component({
   template: `<knowledge-owl-widget></knowledge-owl-widget>`,
@@ -12,11 +14,13 @@ import {
 })
 class KnowledgeOwlWidgetWithoutCredentials {}
 
+
 @Component({
   template: `<knowledge-owl-widget></knowledge-owl-widget>`,
   standalone: false,
 })
 class KnowledgeOwlWidgetWithoutProjectKey {}
+
 
 @Component({
   template: `
@@ -29,7 +33,7 @@ class KnowledgeOwlWidgetWithCredentials {}
 describe('KnowledgeOwl widget with missing credentials', () => {
   it('should throw KnowledgeWidgetProductURLMissingError error', () => {
     const fixture = createComponent(KnowledgeOwlWidgetWithoutCredentials, [
-      { provide: 'KOProjectURL', useValue: 'https://' },
+      { provide: KO_PROJECT_URL, useValue: 'https://' },
     ]);
     expect(() => fixture.detectChanges()).toThrowError(
       getKnowledgeWidgetInvalidProductURLError().message
@@ -38,7 +42,7 @@ describe('KnowledgeOwl widget with missing credentials', () => {
 
   it('should throw KnowledgeWidgetProductKeyMissingError error', () => {
     const fixture = createComponent(KnowledgeOwlWidgetWithoutProjectKey, [
-      { provide: 'KOProjectURL', useValue: 'https://knowledgeowl.com' },
+      { provide: KO_PROJECT_URL, useValue: 'https://knowledgeowl.com' },
     ]);
     expect(() => fixture.detectChanges()).toThrowError(
       getKnowledgeWidgetPoductKeyMissingError().message
@@ -49,7 +53,7 @@ describe('KnowledgeOwl widget with missing credentials', () => {
 describe('KnowledgeOwl widget', () => {
   it('should not throw error when given correct inputs', () => {
     const fixture = createComponent(KnowledgeOwlWidgetWithCredentials, [
-      { provide: 'KOProjectURL', useValue: 'https://knowledgeowl.com' },
+      { provide: KO_PROJECT_URL, useValue: 'https://knowledgeowl.com' },
     ]);
     expect(() => fixture.detectChanges()).not.toThrowError();
   });

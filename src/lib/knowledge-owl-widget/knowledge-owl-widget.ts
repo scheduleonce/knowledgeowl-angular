@@ -1,16 +1,9 @@
-import {
-  AfterContentInit,
-  ChangeDetectionStrategy,
-  Component,
-  Inject,
-  Input,
-  OnInit,
-  ViewEncapsulation,
-} from '@angular/core';
+import { AfterContentInit, ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import {
   getKnowledgeWidgetPoductKeyMissingError,
   getKnowledgeWidgetInvalidProductURLError,
 } from './knowledge-owl-widget-errors';
+import { KO_PROJECT_URL } from '../ko-project-url.token';
 
 /** Regex to validate article URL is valid or not */
 const urlValidatorRegex =
@@ -44,7 +37,7 @@ export class KnowledgeOwlWidget implements OnInit, AfterContentInit {
     return this._pageLocation;
   }
 
-  constructor(@Inject('KOProjectURL') private projectURL: string) {}
+  private projectURL: string = inject(KO_PROJECT_URL);
 
   ngOnInit(): void {
     this._initWidget();

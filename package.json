@@ -7,7 +7,7 @@
     "url": "git+https://github.com/scheduleonce/knowledgeowl-angular.git"
   },
   "license": "MIT",
-  "version": "5.1.6",
+  "version": "5.1.7",
   "scripts": {
     "ng": "ng",
     "build": "ng build --configuration production && cp README.md dist/knowledgeowl-angular",
@@ -22,14 +22,15 @@
     "fix:lint": "ng lint knowledgeowl-angular --fix"
   },
   "dependencies": {
+    "jiti": "^2.6.1",
     "rxjs": "^7.8.2",
     "tslib": "2.3.1"
   },
   "devDependencies": {
     "@angular-eslint/builder": "^20.7.0",
-    "@angular-eslint/eslint-plugin": "^16.3.1",
-    "@angular-eslint/eslint-plugin-template": "^16.3.1",
-    "@angular-eslint/template-parser": "^16.3.1",
+    "@angular-eslint/eslint-plugin": "^20.7.0",
+    "@angular-eslint/eslint-plugin-template": "^20.7.0",
+    "@angular-eslint/template-parser": "^20.7.0",
     "@angular/build": "^20.3.14",
     "@angular/cli": "^20.3.14",
     "@angular/common": "^20.3.16",
@@ -39,12 +40,12 @@
     "@angular/platform-browser": "^20.3.16",
     "@angular/platform-browser-dynamic": "^20.3.16",
     "@types/jasmine": "3.10.3",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "eslint": "^8.57.1",
-    "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-jsdoc": "37.9.1",
-    "eslint-plugin-prefer-arrow": "1.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "eslint": "^9.18.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsdoc": "^50.6.2",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
     "jasmine-core": "4.0.0",
     "karma": "^6.4.4",
     "karma-chrome-launcher": "3.1.0",
@@ -55,7 +56,10 @@
     "ng-packagr": "^20.3.2",
     "prettier": "2.5.1",
     "puppeteer": "24.9.0",
-    "typescript": "5.8.2",
+    "typescript": "5.9.3",
     "zone.js": "0.15.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

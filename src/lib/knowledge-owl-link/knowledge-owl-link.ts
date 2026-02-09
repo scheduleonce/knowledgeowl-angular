@@ -2,15 +2,17 @@ import {
   AfterContentInit,
   ElementRef,
   HostListener,
-  Inject,
   Input,
   Directive,
+  inject,
 } from '@angular/core';
 import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-errors';
+import { KO_PROJECT_URL } from '../ko-project-url.token';
 
 /**
  * Knowledge Owl Link
  */
+
 @Directive({
   selector: `a[knowledgeOwlLink]`,
   exportAs: 'knowledgeOwlLink',
@@ -20,10 +22,8 @@ export class KnowledgeOwlLink implements AfterContentInit {
   @Input()
   knowledgeOwlLink: string;
 
-  constructor(
-    protected elementRef: ElementRef,
-    @Inject('KOProjectURL') private projectURL: string
-  ) {}
+  protected elementRef = inject(ElementRef);
+  private projectURL: string = inject(KO_PROJECT_URL);
 
   getHostElement(): HTMLElement {
     return this.elementRef.nativeElement;

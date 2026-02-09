@@ -2,12 +2,14 @@ import { Component, Provider, Type } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { KnowledgeOwlLinkModule } from './index';
 import { getKnowledgeLinkArticleMissingError } from './knowledge-owl-widget-errors';
+import { KO_PROJECT_URL } from 'ko-project-url.token';
 
 @Component({
   template: `<a knowledgeOwlLink>Test link</a>`,
   standalone: false,
 })
 class KnowledgeOwlLinkWithoutArticle {}
+
 
 @Component({
   template: `
@@ -22,7 +24,7 @@ class KnowledgeOwlLinkWithValidInputs {}
 describe('KnowledgeOwl link with missing credentials', () => {
   it('should throw error without knowledgeOwlLink', () => {
     const fixture = createComponent(KnowledgeOwlLinkWithoutArticle, [
-      { provide: 'KOProjectURL', useValue: 'https://knowledgeowl.com' },
+      { provide: KO_PROJECT_URL, useValue: 'https://knowledgeowl.com' },
     ]);
     expect(() => fixture.detectChanges()).toThrowError(
       getKnowledgeLinkArticleMissingError().message
@@ -33,7 +35,7 @@ describe('KnowledgeOwl link with missing credentials', () => {
 describe('KnowledgeOwl link', () => {
   it('should not throw error when given correct inputs', () => {
     const fixture = createComponent(KnowledgeOwlLinkWithValidInputs, [
-      { provide: 'KOProjectURL', useValue: 'https://knowledgeowl.com' },
+      { provide: KO_PROJECT_URL, useValue: 'https://knowledgeowl.com' },
     ]);
     expect(() => fixture.detectChanges()).not.toThrowError();
   });
