@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: '24.11.0'
+        node-version: '24.13.0'
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -23,7 +23,8 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '24.13.0' matrix.node-version }}
           cache: 'npm'
       - run: npm ci
       - run: npm test
+
