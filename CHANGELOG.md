@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.0-beta.0] - 2026-03-11
+
+- [ONCEHUB-112987](https://scheduleonce.atlassian.net/browse/ONCEHUB-112987) Upgrade to Angular 21 and Node 24
+  - **BREAKING**: Upgraded Angular packages to v21.1.x
+  - **BREAKING**: Minimum Node.js version is now 24 (updated CI to Node 24.13.0)
+  - **BREAKING**: Migrated ESLint configuration to flat config format (ESLint v9) with `angular-eslint` v21.3.0, replacing the legacy `.eslintrc`-based setup
+  - Removed individual `@angular-eslint/*`, `@typescript-eslint/*`, `eslint-plugin-import`, `eslint-plugin-jsdoc`, and `eslint-plugin-prefer-arrow` packages in favour of the unified `angular-eslint` package
+  - Updated `tslib` to `^2.8.1`
+
+## [5.1.6] - 2026-01-15
+
+- [ONCEHUB-109966](https://scheduleonce.atlassian.net/browse/ONCEHUB-109966) Updated dependencies and fixes
+
 ## [4.1.4] - 2024-02-01
 
 - [ONCEHUB-77374](https://scheduleonce.atlassian.net/browse/ONCEHUB-77374) fixed vulnerability found in package vite

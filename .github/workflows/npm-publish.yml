@@ -5,19 +5,30 @@ name: Publish Package to npmjs
 on:
   release:
     types: [published]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      # setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
         with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm run package
-      # scoped packages are private by default so need to add public flag
-      - run: npm run publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          node-version: '24.13.0'
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run package
+
+      - name: Publish to npm
+        run: npm run publish
+
