@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [6.0.0-beta.0] - 2026-03-11
+## [6.0.0] - 2026-03-26
 
 - [ONCEHUB-112987](https://scheduleonce.atlassian.net/browse/ONCEHUB-112987) Upgrade to Angular 21 and Node 24
   - **BREAKING**: Upgraded Angular packages to v21.1.x
