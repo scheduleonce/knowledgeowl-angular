@@ -10,7 +10,7 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
+      require('karma-coverage'),
 
       require('karma-junit-reporter'),
     ],
@@ -28,10 +28,9 @@ module.exports = function (config) {
       outputDir: require('path').join(__dirname, '../../reports'),
       outputFile: 'knowledge-owl-angular-test-results.xml',
     },
-    coverageIstanbulReporter: {
+    coverageReporter: {
       dir: require('path').join(__dirname, '../../coverage'),
-      reports: ['html', 'lcovonly'],
-      fixWebpackSourcePaths: true,
+      reporters: [{ type: 'html' }, { type: 'lcovonly' }],
     },
     reporters: ['dots', 'junit'],
     port: 9876,
