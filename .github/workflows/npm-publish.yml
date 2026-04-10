@@ -30,7 +30,12 @@ jobs:
         run: npm run package
 
       - name: Publish to npm
-        run: npm run publish
+        run: |
+          if [ "${{ github.event.release.prerelease }}" = "true" ]; then
+            cd dist/knowledgeowl-angular && npm publish --access public --tag beta
+          else
+            cd dist/knowledgeowl-angular && npm publish --access public --tag latest
+          fi
 
 
 
