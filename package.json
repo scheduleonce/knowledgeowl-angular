@@ -7,7 +7,7 @@
     "url": "git+https://github.com/scheduleonce/knowledgeowl-angular.git"
   },
   "license": "MIT",
-  "version": "6.0.1-beta.1",
+  "version": "6.0.1",
   "scripts": {
     "ng": "ng",
     "build": "ng build --configuration production && node -e \"require('fs').copyFileSync('README.md','dist/knowledgeowl-angular/README.md')\"",
